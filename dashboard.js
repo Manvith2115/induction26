@@ -5,9 +5,9 @@
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwu3Qj6IWx9s5j7muKZYDmMcYpiyUi2F6rf_Zp_dtNtapf8rZyge23lK4u0hysLczNO/exec"; // ← paste your URL here
 
 const TEAMS = [
-  "Team 01", "Team 02", "Team 03", "Team 04", "Team 05",
-  "Team 06", "Team 07", "Team 08", "Team 09", "Team 10",
-  "Team 11", "Team 12", "Team 13", "Team 14", "Team 15"
+  "Team - 1", "Team - 2", "Team - 3", "Team - 4", "Team - 5",
+  "Team - 6", "Team - 7", "Team - 8", "Team - 9", "Team - 10",
+  "Team - 11", "Team - 12", "Team - 13", "Team - 14", "Team - 15"
 ];
 
 const DELIVERABLES = ["Abstract(.pdf)", "Components List(.pdf)", "Circuit Diagram(.jpg)", "CAD(.pdf)","Code(.ino)","Report(.pdf)"];
