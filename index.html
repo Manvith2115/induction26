@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="home-body">
-
   <div class="noise"></div>
-
   <nav class="nav">
     <span class="nav-logo">TRC</span>
-    <a href="dashboard.html" class="nav-link">Dashboard →</a>
+    <div style="display:flex; gap:16 px; align-items:center;">
+      <a href="dashboard.html" class="nav-link">Dashboard →</a>
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Light</button>
+    </div>
   </nav>
-
   <main class="hero">
     <div class="hero-tag">The Robotics Club · SNIST · 2026</div>
     <h1 class="hero-title">INDUCTION<span class="accent">'26</span></h1>
@@ -26,10 +26,21 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeseUKLxeS8KfcwBOesuWSiaFuPWuvaKgCNXo9sAZ-aREul0w/viewform?usp=publish-editor" target="_blank" class="btn-secondary">Submit Documents</a>
     </div>
   </main>
-
   <footer class="footer">
     <span>© 2026 The Robotics Club, Sreenidhi Institute of Science and Technology</span>
   </footer>
 
+  <script>
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle("light");
+      document.getElementById("theme-btn").textContent = isLight ? "☾ Dark" : "☀ Light";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    }
+
+    if(localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light");
+      document.getElementById("theme-btn").textContent = "☾ Dark";
+    }
+  </script>
 </body>
 </html>
