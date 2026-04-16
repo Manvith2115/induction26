@@ -9,18 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="dash-body">
-
   <div class="noise"></div>
-
   <nav class="nav">
     <a href="index.html" class="nav-logo">← INDUCTION'26</a>
-    <span class="nav-link" id="last-updated">Loading...</span>
+    <div style="display:flex; gap:16px; align-items:center;">
+      <span class="nav-link" id="last-updated">Loading...</span>
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Light</button>
+    </div>
   </nav>
-
   <div class="dash-header">
     <h1 class="dash-title">Submission <span class="accent">Dashboard</span></h1>
     <p class="dash-sub">Real-time tracking across all 15 teams</p>
-
     <div class="summary-bar" id="summary-bar">
       <div class="summary-chip">
         <span class="chip-label">Teams Complete</span>
@@ -36,12 +35,10 @@
       </div>
     </div>
   </div>
-
   <div class="legend">
     <span class="legend-item"><span class="dot done"></span> Submitted</span>
     <span class="legend-item"><span class="dot miss"></span> Pending</span>
   </div>
-
   <div class="table-wrapper">
     <table class="dash-table" id="dash-table">
       <thead>
@@ -57,11 +54,23 @@
         </tr>
       </thead>
       <tbody id="table-body">
-        <tr><td colspan="6" class="loading-row">Fetching submissions...</td></tr>
+        <tr><td colspan="8" class="loading-row">Fetching submissions...</td></tr>
       </tbody>
     </table>
   </div>
 
   <script src="dashboard.js"></script>
+  <script>
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle("light");
+      document.getElementById("theme-btn").textContent = isLight ? "☾ Dark" : "☀ Light";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    }
+
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light");
+      document.getElementById("theme-btn").textContent = "☾ Dark";
+    }
+  </script>
 </body>
 </html>
