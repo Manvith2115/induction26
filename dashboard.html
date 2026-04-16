@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — INDUCTION'26</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="dash-body">
+
+  <div class="noise"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">← INDUCTION'26</a>
+    <span class="nav-link" id="last-updated">Loading...</span>
+  </nav>
+
+  <div class="dash-header">
+    <h1 class="dash-title">Submission <span class="accent">Dashboard</span></h1>
+    <p class="dash-sub">Real-time tracking across all 15 teams</p>
+
+    <div class="summary-bar" id="summary-bar">
+      <div class="summary-chip">
+        <span class="chip-label">Teams Complete</span>
+        <span class="chip-val" id="count-complete">—</span>
+      </div>
+      <div class="summary-chip">
+        <span class="chip-label">Total Submitted</span>
+        <span class="chip-val" id="count-submitted">—</span>
+      </div>
+      <div class="summary-chip">
+        <span class="chip-label">Pending</span>
+        <span class="chip-val" id="count-pending">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="dot done"></span> Submitted</span>
+    <span class="legend-item"><span class="dot miss"></span> Pending</span>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="dash-table" id="dash-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Abstract</th>
+          <th>CAD</th>
+          <th>Circuit Diagram</th>
+          <th>Code</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr><td colspan="6" class="loading-row">Fetching submissions...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
